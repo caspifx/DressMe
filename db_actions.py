@@ -7,9 +7,10 @@ graph.delete_all()
 
 def create_node(item):
     type_n = find_type(item)
-    item = Node(type_n, name=item.id, is_formal=item.formal, color=item.color, has_painting=item.plain)
+    item = Node(type_n, name=item.id, is_formal=item.formal, color=item.color, plain=item.plain)
     print item
     graph.create(item)
+    return item
 
 
 def create_relationship(item_src, item_dst, score):
@@ -23,10 +24,18 @@ def create_relationship(item_src, item_dst, score):
 
 def get_connected_good(item):
     node = get_node(item)
-    good_nodes = []
+    matching_nodes = []
     for rel in graph.match(node, rel_type="GOES WELL"):
-        good_nodes.append(rel.end_node())
-    return good_nodes
+        node = rel.end_node()
+        item_type = node.labels()
+        if 'Top' in item_type:
+            item = classes.Top(node['name'], node['color'], node['plain'], node['is_formal'], False, False)
+        elif 'Pants' in item_type:
+            item = classes.Pants(node['name'], node['color'], node['plain'], node['is_formal'], False, False)
+        elif 'Shoes' in item_type:
+            item = classes.Top(node['name'], node['color'], node['plain'], node['is_formal'], False)
+        matching_nodes.append((item, rel['score']))
+    return matching_nodes
 
 
 def get_all_nodes(type_n):
@@ -55,10 +64,9 @@ top = classes.Top('0', "(0,0,0)", "No", "No", "Short", "No")
 top2 = classes.Top('1', "(0,0,0)", "No", "No", "Short", "No")
 n1 = create_node(top)
 n2 = create_node(top2)
-t1 = get_node(top2)
-print t1
+create_relationship(top, top2, 8)
+print get_connected_good(top)
 0/0
-create_relationship(n1, n2, 8)
 nodes = get_connected_good(n1)
 print nodes
 print "!!!!!"
