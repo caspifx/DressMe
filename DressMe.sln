@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DressMe", "DressMe\", "{BB9C1C3E-3303-450F-A0D8-E507AFC52F54}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_25883"
+		Debug.AspNetCompiler.PhysicalPath = "DressMe\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_25883\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_25883"
+		Release.AspNetCompiler.PhysicalPath = "DressMe\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_25883\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "25883"
+		SlnRelativePath = "DressMe\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB43A6E2-5CF9-4E5D-AB9C-3FAF90D361C4}"
+	ProjectSection(SolutionItems) = preProject
+		DressMe-Home.html = DressMe-Home.html
+		DressMe.js = DressMe.js
+		general-style.css = general-style.css
+		SignUp.html = SignUp.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB9C1C3E-3303-450F-A0D8-E507AFC52F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9C1C3E-3303-450F-A0D8-E507AFC52F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AD2BA94-DBE8-4EB6-A56F-E31F287E8815}
+	EndGlobalSection
+EndGlobal

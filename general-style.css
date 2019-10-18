@@ -1,0 +1,28 @@
+﻿html {
+    background: url("static/img/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+span {
+    font-family: 'Vollkorn', serif;
+    opacity: 1;
+    font-size: 30px;
+    color: antiquewhite;
+}
+#header {
+    
+}
+img {
+    opacity: 1;
+}
+#thisis {
+    font-size: xx-large;
+}
+#item_name {
+    color:brown;
+}
+#demo {
+
+}

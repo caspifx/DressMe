@@ -7,8 +7,8 @@ class Item:
 
 
 class Top(Item):
-    def __init__(self, id, color, pain, formal, sleeve, neck):
-        Item.__init__(self, id, color, pain, formal)
+    def __init__(self, id, color, plain, formal, sleeve, neck):
+        Item.__init__(self, id, color, plain, formal)
         self.sleeve = sleeve
         self.neck = neck
 
@@ -33,3 +33,9 @@ class Shoes(Item):
         Item.__init__(self, id, color, pain, formal)
         self.type = type
 
+
+class Outfit:
+    def __init__(self, top, pants, shoes=None):
+        self.top = top
+        self.pants = pants
+        self.shoes = shoes

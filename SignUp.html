@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/lib/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="css/general-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <div class="card-panel teal lighten-2" id="header">
+                        <body>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="left-align">
+                                            <center><h2><u>Add cloth</u></h2></center>
+                                            <div class="card-panel teal lighten-2" id="header">
+                                                <form method="POST" action="">
+                                                    <h3>Upload picture of a clothing item</h3>
+                                                    <div class="file-field input-field">
+                                                        <div class="btn">
+                                                            <span>File</span>
+                                                            <input type="file">
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <p>
+                                                            <h3>Which item is it?</h3>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input class="with-gap" name="item_type" type="radio" onclick="" value="shirt" />
+                                                                <span>Shirt</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input class="with-gap" name="item_type" type="radio" value="pants" />
+                                                                <span>Pants</span>
+                                                            </label>
+                                                        </p>
+                                                        <p>
+                                                            <label>
+                                                                <input class="with-gap" name="item_type" type="radio" value="shoes" />
+                                                                <span>Shoes</span>
+                                                            </label>
+                                                        </p>
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <h4>Name for the item:</h4>
+                                                        <input placeholder="Item Name" id="item_name" name="item_name" type="text" class="validate">
+                                                        <label for="item_name"></label>
+                                                    </div>
+                                                    <br />
+                                                    <br />
+                                                    <div>
+                                                        Select the color of the item: <input type="color" name="favcolor" value="#ff0000"><br><br>
+                                                    </div>
+                                                    <div class="shirtBox" style="display:none">shirt</div>
+                                                    <div class="pantsBox" style="display:none">pants</div>
+                                                    <div class="shoesBox" style="display:none">shoes</div>
+                                                    <br />
+                                                    <br />
+                                                    <div class="switch">
+                                                    <label>
+                                                    Casual
+                                                    <input type="checkbox">
+                                                    <span class="lever"></span>
+                                                    Formal
+                                                    </label>
+                                                    </div>
+                                                    <center>
+                                                        <form method="POST">
+                                                            <input type="submit" name="submit">
+                                                            <i class="material-icons right">send</i>
+                                                        </form>
+
+                                                    </center>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>
+</html>
+<script>
+    //show the correct div by item
+    $('input[type="radio"]').click(function () {
+        if ($(this).attr("value") == "pants") {
+            $(".shirtBox").hide('slow');
+            $(".shoesBox").hide('slow');
+            $(".pantsBox").show('slow');
+        }
+        if ($(this).attr("value") == "shoes") {
+            $(".shirtBox").hide('slow');
+            $(".pantsBox").hide('slow');
+            $(".shoesBox").show('slow');
+        }
+        if ($(this).attr("value") == "shirt") {
+            $(".shoesBox").hide('slow');
+            $(".pantsBox").hide('slow');
+            $(".shirtBox").show('slow');
+        }
+    }
+    );
+    $('input[type="radio"]').trigger('click');
+    //end of show div
+</script>

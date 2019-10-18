@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/lib/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="css/general-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <div class="card-panel teal lighten-2" id="header">
+                        <span id="thisis" class="left-align">This is</span>
+                        <br />
+                        <img src="static/img/logo.png" class="center-align responsive-img" />
+                        <span class="black-text">By Ido Yamner, Noy Barnett and Ziv Caspi</span>
+                    </div>
+
+                    <div class="slider">
+                        <ul class="slides">
+                            <li>
+                                <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                                <div class="caption center-align">
+                                    <h3>WE are DressMe</h3>
+                                    <h5 class="light grey-text text-lighten-3">WE inspire to help you BECOME a better DRESSER.</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                                <div class="caption left-align">
+                                    <h3>How do we do It?</h3>
+                                    <h5 class="light grey-text text-lighten-3">We ANALAIZE your preferences and learn in order to choose the PERFECT outfit. Just For YOU</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                                <div class="caption right-align">
+                                    <h3>What do YOU need to do?</h3>
+                                    <h5 class="light grey-text text-lighten-3">Simply tell us whats in your CLOSET and CHOOSE you perfect OUTFIT.</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                                <div class="caption center-align">
+                                    <h3>Are you READY?</h3>
+                                    <h5 class="light grey-text text-lighten-3">
+                                        You are just a few steps away from fashion GREATNESS.
+                                        <br />
+                                        <a href="#App">Lets Get YOU Started!</a>
+                                    </h5>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div id="App" class="col s12">
+                        <span class="black-text">
+                            Lets Get Started!
+                        </span>
+                        <br />
+                        <div class="input-field col s6">
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="outfit_button"
+                        onclick="loadOutfit()">
+                            Get An Outfit!
+
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                        <div id="demo" class="card-panel blue lighten-2" style="color: black; font-family: bold;">
+                                Change Me
+                            </div>
+                        <div id="demo2" class="card-panel blue lighten-2">
+                                Change Me
+                            </div>
+                        <div class=""></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="static/js/lib/materialize.min.js"></script>
+    <script type="text/javascript" src="static/js/DressMe.js"></script>
+</body>
+</html>
