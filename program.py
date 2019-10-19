@@ -31,13 +31,7 @@ def pick_random_top():
 def match_pant_to_top():
     top = pick_random_top()
     pants_connected = DB.get_connected_good(top)
-    best_score = 0
-    best_item = None
-    for pant in pants_connected:
-        score = pant[1]
-        if score > best_score:
-            best_score = score
-            best_item = pant[0]
+    best_item = choose_from_list(pants_connected)
     if best_item:
         return (best_item, top)
     else:
@@ -78,6 +72,39 @@ def create_relationship(top, pant, score):
    DB.create_relationship(top, pant, score)
 
 
+
+def choose_from_list(items):
+	best_score = 0
+	best_item = None
+	for obj in items:
+		score = obj[1]
+		item = obj[0]
+		if score > best_score:
+		best_score = score
+		best_item = item
+	return item
+		
+
+# added later, needs testing
+def recommend_pant_to_top(top):
+	pants_connected = DB.get_connected_good(top)
+	shirts_connected = []
+	for pant in pants_connected:
+		good_tops = get_connected_good(pant)
+		for top in good_tops:
+		shirts_connected.append(top)
+	recommeded_pants = []
+	for top in shirts_connected:
+		good_pants = get_connected_good(top)
+		for pant in good_pants:
+		recommeded_pants.append(pant)
+	best_pants = choose_from_list(recommeded_pants)
+	if best_item:
+        return best_item
+    else:
+        return None
+
+		
 def main():
 
     for i in range(3):
