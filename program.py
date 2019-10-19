@@ -1,11 +1,38 @@
 import DB
 import random
 import classes
+import webcolors
 
 tops = []
 pants = []
 shoes = []
 
+# added later, needs testing
+def hex_to_rgb(h):
+	return tuple(int(h[i:i+2], 16) for i in (0, 2, 4)))
+	
+
+# added later, needs testing
+def closest_colour(requested_colour):
+    min_colours = {}
+    for key, name in webcolors.css3_hex_to_names.items():
+        r_c, g_c, b_c = webcolors.hex_to_rgb(key)
+        rd = (r_c - requested_colour[0]) ** 2
+        gd = (g_c - requested_colour[1]) ** 2
+        bd = (b_c - requested_colour[2]) ** 2
+        min_colours[(rd + gd + bd)] = name
+    return min_colours[min(min_colours.keys())]
+
+
+# added later, needs testing
+def get_colour_name(requested_colour):
+    try:
+        closest_name = actual_name = webcolors.rgb_to_name(requested_colour)
+    except ValueError:
+        closest_name = closest_colour(requested_colour)
+        actual_name = None
+    return closest_name
+	
 
 def init():
     DB.init()
@@ -116,11 +143,14 @@ def main():
     create_relationship(tops[0], pants[2], 10)
     create_relationship(tops[2], pants[2], 6)
     outfit = generate_outfit()
+	# added later, needs testing
+	top_color = get_colour_name(closest_colour(hex_to_rgb(outfit.top.color)))
+	pants_color = get_colour_name(closest_colour(hex_to_rgb(outfit.pants.color)))
     if outfit != 0:
-        print "Top {2}, Color:{1} \n Pant {0}, Color {3}".format(outfit.top.id, outfit.top.color, outfit.pants.id,
-                                                                 outfit.pants.color)
-        return "Top {2}, Color:{1} \n Pant {0}, Color {3}".format(outfit.top.id, outfit.top.color, outfit.pants.id,
-                                                                 outfit.pants.color)
+        print "Top {2}, Color:{1} \n Pant {0}, Color {3}".format(outfit.top.id, top_color, outfit.pants.id,
+                                                                 pants_color)
+        return "Top {2}, Color:{1} \n Pant {0}, Color {3}".format(outfit.top.id, top_color, outfit.pants.id,
+                                                                 pants_color)
     else:
         print 'No Outfit'
         return "No Outfit"
